@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+  }
+
+  .card {
+    background: #fff;
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ddd;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: #888;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 0 0 4px;
+    font-size: 28px;
+  }
+
+  .tagline {
+    text-align: center;
+    color: #666;
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+
+  p.bio {
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .detail {
+    background: #fafafa;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+  }
+
+  .detail span {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #999;
+    margin-bottom: 4px;
+  }
+
+  .detail strong {
+    font-size: 15px;
+    color: #222;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Will Collins</h1>
+  <p class="tagline">Marketing Senior at Xavier University | Sports Designer</p>
+
+  <p class="bio">
+    I'm a senior Marketing major at Xavier University, currently serving as the
+    Graphic Design Specialist for Xavier Men's Basketball, where I create
+    content for the program. Outside of school, I run Wilco Media, my own
+    independent sports design business, and I'm building LOCKR, a sports
+    content generation platform. I'm always working toward the goal of
+    becoming a creative director for a professional or high-level collegiate
+    athletics program.
+  </p>
+
+  <div class="details">
+    <div class="detail">
+      <span>School</span>
+      <strong>Xavier University</strong>
+    </div>
+    <div class="detail">
+      <span>Role</span>
+      <strong>Graphic Design Specialist, Men's Basketball</strong>
+    </div>
+    <div class="detail">
+      <span>Business</span>
+      <strong>Wilco Media</strong>
+    </div>
+    <div class="detail">
+      <span>Building</span>
+      <strong>LOCKR</strong>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
