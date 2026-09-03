@@ -3,126 +3,326 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Me</title>
+<title>Will Collins — Wilco Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  * {
-    box-sizing: border-box;
+  :root {
+    --ink: #0F1620;
+    --surface: #16202C;
+    --surface-line: #263241;
+    --paper: #ECEEF1;
+    --paper-dim: #A9B3BE;
+    --gold: #D4AF37;
+    --gold-dim: #8B7226;
   }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
 
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #f5f5f5;
-    color: #222;
-    display: flex;
-    justify-content: center;
-    padding: 60px 20px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
   }
 
-  .card {
-    background: #fff;
-    max-width: 600px;
-    width: 100%;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
   }
 
-  .avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: #ddd;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    color: #888;
+  /* Hero */
+  header.hero {
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--surface-line);
+  }
+
+  .hero-kicker {
+    font-size: 14px;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+    margin: 0 0 18px;
+    font-weight: 600;
   }
 
   h1 {
-    text-align: center;
-    margin: 0 0 4px;
-    font-size: 28px;
-  }
-
-  .tagline {
-    text-align: center;
-    color: #666;
-    margin-bottom: 24px;
-    font-size: 15px;
-  }
-
-  p.bio {
-    line-height: 1.6;
-    font-size: 16px;
-    margin-bottom: 24px;
-  }
-
-  .details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 24px;
-  }
-
-  .detail {
-    background: #fafafa;
-    padding: 14px;
-    border-radius: 8px;
-    border: 1px solid #eee;
-  }
-
-  .detail span {
-    display: block;
-    font-size: 12px;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: clamp(52px, 11vw, 96px);
+    line-height: 0.92;
+    letter-spacing: 0.01em;
+    margin: 0 0 20px;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #999;
+    opacity: 0;
+    animation: rise 0.7s ease-out forwards;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-role {
+    font-size: 19px;
+    color: var(--paper-dim);
+    max-width: 46ch;
+    margin: 0;
+  }
+
+  .hero-role strong { color: var(--paper); font-weight: 600; }
+
+  /* Sections */
+  section { padding: 56px 0; border-bottom: 1px solid var(--surface-line); }
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 0.01em;
+    margin: 0 0 24px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  p.lead {
+    font-size: 17px;
+    max-width: 60ch;
+    color: var(--paper);
+  }
+
+  /* Stat row */
+  .stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .stat b {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--paper);
+  }
+
+  .stat span {
+    font-size: 13px;
+    color: var(--paper-dim);
+  }
+
+  /* Timeline */
+  .timeline { position: relative; margin-top: 8px; }
+
+  .role {
+    position: relative;
+    padding-left: 28px;
+    padding-bottom: 40px;
+    border-left: 1px solid var(--surface-line);
+  }
+
+  .role:last-child { padding-bottom: 0; }
+
+  .role::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 4px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .role-years {
+    font-size: 13px;
+    color: var(--gold-dim);
+    font-weight: 600;
     margin-bottom: 4px;
   }
 
-  .detail strong {
-    font-size: 15px;
-    color: #222;
+  .role-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 2px;
+  }
+
+  .role-org {
+    font-size: 14px;
+    color: var(--paper-dim);
+    margin-bottom: 10px;
+  }
+
+  .role p { margin: 0 0 10px; font-size: 15px; max-width: 58ch; }
+
+  .role ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    font-size: 14.5px;
+    color: var(--paper-dim);
+  }
+
+  .role li { margin-bottom: 5px; }
+
+  .role .credit {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--gold-dim);
+  }
+
+  /* Contact */
+  footer {
+    padding: 64px 0 96px;
+  }
+
+  footer h2 { margin-bottom: 16px; }
+
+  .contact-line {
+    font-size: 17px;
+    margin-bottom: 28px;
+  }
+
+  .contact-line a { color: var(--paper); text-decoration: none; border-bottom: 1px solid var(--gold-dim); }
+  .contact-line a:hover { border-bottom-color: var(--gold); }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+  }
+
+  .links a {
+    color: var(--paper-dim);
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid transparent;
+  }
+
+  .links a:hover { color: var(--paper); border-bottom-color: var(--gold); }
+
+  .copyright {
+    margin-top: 48px;
+    font-size: 12.5px;
+    color: var(--paper-dim);
+    opacity: 0.6;
+  }
+
+  @media (max-width: 480px) {
+    header.hero { padding: 64px 0 48px; }
+    .stats { gap: 28px; }
   }
 </style>
 </head>
 <body>
 
-<div class="card">
-  <h1>Will Collins</h1>
-  <p class="tagline">Marketing Senior at Xavier University | Sports Designer</p>
+<div class="wrap">
 
-  <p class="bio">
-    I'm a senior Marketing major at Xavier University, currently serving as the
-    Graphic Design Specialist for Xavier Men's Basketball, where I create
-    content for the program. Outside of school, I run Wilco Media, my own
-    independent sports design business, and I'm building LOCKR, a sports
-    content generation platform. I'm always working toward the goal of
-    becoming a creative director for a professional or high-level collegiate
-    athletics program.
-  </p>
+  <header class="hero">
+    <p class="hero-kicker">Wilco Media, LLC</p>
+    <h1>Will Collins</h1>
+    <p class="hero-role">
+      <strong>Creative Director & Sports Brand Designer.</strong>
+      Marketing student at Xavier University and Graphic Design Specialist
+      for Xavier Athletics.
+    </p>
+  </header>
 
-  <div class="details">
-    <div class="detail">
-      <span>School</span>
-      <strong>Xavier University</strong>
+  <section id="about">
+    <h2>About</h2>
+    <p class="lead">
+      I run Wilco Media, a design studio built around sports content — from
+      commitment edits that help athletes announce their college decisions,
+      to web design and now AI-driven tools for teams and brands through
+      LOCKR. The goal is simple: put art and sports in the same frame.
+    </p>
+    <div class="stats">
+      <div class="stat">
+        <b>1,300+</b>
+        <span>Athletes designed for nationwide</span>
+      </div>
+      <div class="stat">
+        <b>150+</b>
+        <span>Pieces produced for Xavier Athletics</span>
+      </div>
+      <div class="stat">
+        <b>2022</b>
+        <span>Founded Wilco Media</span>
+      </div>
     </div>
-    <div class="detail">
-      <span>Role</span>
-      <strong>Graphic Design Specialist, Men's Basketball</strong>
+  </section>
+
+  <section id="experience">
+    <h2>Work Experience</h2>
+    <div class="timeline">
+
+      <div class="role">
+        <div class="role-years">2024 &ndash; Present</div>
+        <div class="role-title">Graphic Design Specialist</div>
+        <div class="role-org">Xavier Athletic Department</div>
+        <p>
+          Student employee producing content across Xavier Athletics' social
+          and digital platforms, including the men's basketball in-game
+          story template and the 2024&ndash;25 MBB Media Guide.
+        </p>
+        <ul>
+          <li>Hall of Fame inductee graphics</li>
+          <li>M/WBB returner and retired jersey posts</li>
+          <li>All-Big East preseason graphics</li>
+          <li>MLS Draft announcement graphics</li>
+        </ul>
+        <span class="credit">Work seen on @XUAthletics, @XavierMBB, and goxavier.com &mdash; featured by @BigEast, @XavierUniversity, and @ColoradoRapids.</span>
+      </div>
+
+      <div class="role">
+        <div class="role-years">2022 &ndash; Present</div>
+        <div class="role-title">Owner</div>
+        <div class="role-org">Wilco Media</div>
+        <p>
+          Sports graphic design for individual athletes, since expanded into
+          web design and AI automation tools for sports brands.
+        </p>
+      </div>
+
+      <div class="role">
+        <div class="role-years">2018 &ndash; 2022</div>
+        <div class="role-title">Graphic Designer</div>
+        <div class="role-org">Tipton Edits</div>
+        <p>
+          Produced commitment and recruitment graphics for Joe Tipton
+          (@TiptonEdits), including jersey-swap edits of top-ranked high
+          school basketball recruits.
+        </p>
+      </div>
+
     </div>
-    <div class="detail">
-      <span>Business</span>
-      <strong>Wilco Media</strong>
+  </section>
+
+  <footer id="contact">
+    <h2>Let's Work</h2>
+    <p class="contact-line">
+      <a href="mailto:info@wilcomediallc.com">info@wilcomediallc.com</a>
+      &nbsp;&middot;&nbsp;
+      <a href="tel:4123105544">412-310-5544</a>
+    </p>
+    <div class="links">
+      <a href="https://www.wilcomediallc.com" target="_blank" rel="noopener">wilcomediallc.com</a>
+      <a href="https://www.wilcomediallc.com/portfolio" target="_blank" rel="noopener">Portfolio</a>
+      <a href="https://www.instagram.com/madebywilco" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@madebywilco" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://x.com/madebywilco" target="_blank" rel="noopener">X</a>
+      <a href="http://www.linkedin.com/in/will-collins-57379723a" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <div class="detail">
-      <span>Building</span>
-      <strong>LOCKR</strong>
-    </div>
-  </div>
+    <p class="copyright">&copy; 2026 Wilco Media, LLC.</p>
+  </footer>
+
 </div>
 
 </body>
