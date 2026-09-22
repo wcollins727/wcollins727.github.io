@@ -1,29 +1,1299 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-aud="visitor">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Will Collins | Sports Creative & Entrepreneur</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Will Collins — Wilco Media</title>
+<meta name="description" content="Will Collins — founder of Wilco Media. Sports design for athletes, teams and programs, and LOCKR, a sports creative OS.">
+<meta name="theme-color" content="#05060b">
+<meta property="og:title" content="Will Collins — Wilco Media">
+<meta property="og:description" content="Where sports becomes art. Design for athletes who refuse to blend in.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238b5cf6'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-size='17' font-weight='700' fill='%23fff' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
 <style>
-body{margin:0;font-family:Inter,sans-serif;background:#081528;color:#fff;line-height:1.7}
-nav{position:fixed;top:0;width:100%;padding:20px 8%;box-sizing:border-box;display:flex;justify-content:space-between;background:rgba(8,21,40,.95);backdrop-filter:blur(10px)}
-nav a{color:#fff;text-decoration:none;margin-left:24px}
-.hero{min-height:100vh;display:flex;align-items:center;padding:0 10%;background:linear-gradient(135deg,#081528,#11284a)}
-.hero-content{max-width:850px}.tag{color:#ff7a1a;font-weight:700;letter-spacing:1px}.hero h1{font-size:4.5rem;margin:10px 0}.hero p{font-size:1.2rem;color:#cfd8e3}
-.section{padding:100px 10%}.section h2{font-size:2.5rem;margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}.card{background:#132540;padding:28px;border-radius:20px}.card h3{color:#ff7a1a}
-.timeline-item{background:#132540;padding:28px;border-radius:20px;margin-bottom:20px;border-left:4px solid #ff7a1a}
-.resume{background:#132540;padding:30px;border-radius:20px}
-footer{text-align:center;padding:40px;color:#9fb0c6}
-</style></head>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --bg:#05060b;
+  --bg-2:#0a0d18;
+  --ink:#eef1fb;
+  --ink-dim:#9aa2bd;
+  --ink-faint:#6b7291;
+  --line:rgba(255,255,255,0.08);
+  --line-strong:rgba(139,92,246,0.45);
+  --glass:rgba(255,255,255,0.035);
+  --glass-2:rgba(255,255,255,0.06);
+
+  --cyan:#22d3ee;
+  --blue:#3b82f6;
+  --violet:#8b5cf6;
+  --pink:#ec4899;
+  --grad:linear-gradient(120deg,var(--cyan),var(--blue) 35%,var(--violet) 65%,var(--pink));
+
+  --s1:6px; --s2:12px; --s3:18px; --s4:24px; --s5:32px; --s6:48px; --s7:72px; --s8:112px;
+  --r-sm:8px; --r-md:12px; --r-lg:18px; --r-xl:26px; --r-pill:999px;
+
+  --shadow-card:0 18px 44px -22px rgba(139,92,246,0.55);
+  --shadow-glow:0 0 40px -8px rgba(139,92,246,0.55);
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --dur-fast:.18s; --dur:.32s; --dur-slow:.7s;
+  --container:1180px;
+
+  --lockr-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 705.95 490.54'%3E%3Cpolygon fill='%23fff' points='165.96 .08 277.21 0 142.22 325.95 333.25 326.03 402.51 404.5 0 404.51 165.96 .08'/%3E%3Cpath fill='%23fff' d='M613.49,321.07v-.06c51.33-1.93,92.46-53.27,92.46-116.32s-42.33-115.88-94.7-116.38h0s-269.35-.01-269.35-.01l-34.79,84.56h211.54s-.01.06-.02.09h62.97c17.61,0,31.88,15.63,31.88,34.91s-14.28,34.91-31.88,34.91h-245.42l215.1,247.78h127.84l-147.12-169.47h81.49Z'/%3E%3C/svg%3E");
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:150px;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--violet);color:#fff;}
+h1,h2,h3,.brand,.stat-num{font-family:'Space Grotesk','Inter',sans-serif;letter-spacing:-0.02em;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px;}
+
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--violet);color:#fff;padding:var(--s2) var(--s4);
+  border-radius:0 0 var(--r-md) 0;font-weight:600;
+}
+.skip:focus{left:0;}
+
+.grad-text{
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  background-size:200% 200%;animation:shift 9s ease infinite;
+}
+@keyframes shift{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+
+/* ambient */
+.orbs{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.4;mix-blend-mode:screen;animation:float 24s ease-in-out infinite;}
+.orb.o1{width:38vw;height:38vw;background:var(--blue);top:-10%;left:-8%;animation-duration:27s;}
+.orb.o2{width:32vw;height:32vw;background:var(--pink);bottom:-12%;right:-8%;animation-duration:21s;animation-delay:-6s;}
+.orb.o3{width:26vw;height:26vw;background:var(--violet);top:40%;left:55%;animation-duration:31s;animation-delay:-12s;}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(6%,8%) scale(1.12);}}
+.noise{
+  position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+header,main,footer{position:relative;z-index:2;}
+
+/* ============================================================
+   HEADER + AUDIENCE SLIDER
+   ============================================================ */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  background:rgba(5,6,11,.72);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.header-row{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--s4);
+  padding:var(--s3) clamp(16px,5vw,56px);max-width:var(--container);margin:0 auto;width:100%;
+}
+.brand{font-weight:700;font-size:1.1rem;letter-spacing:.02em;white-space:nowrap;}
+.nav-links{display:flex;gap:clamp(12px,2.4vw,28px);font-size:.9rem;color:var(--ink-dim);}
+.nav-links a{position:relative;padding:4px 0;transition:color var(--dur) var(--ease);}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--grad);transition:width var(--dur) var(--ease);}
+.nav-links a:hover::after{width:100%;}
+
+.switch-row{
+  border-top:1px solid var(--line);
+  padding:var(--s2) clamp(16px,5vw,56px);
+  display:flex;align-items:center;justify-content:center;gap:var(--s3);
+}
+.switch-hint{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap;}
+.aud-switch{
+  position:relative;display:grid;grid-template-columns:repeat(3,minmax(92px,1fr));
+  background:var(--glass);border:1px solid var(--line);border-radius:var(--r-pill);padding:4px;
+}
+.aud-switch .thumb{
+  position:absolute;top:4px;bottom:4px;left:4px;width:calc((100% - 8px) / 3);
+  border-radius:var(--r-pill);background:var(--grad);background-size:200% 200%;
+  transition:transform var(--dur) var(--ease);box-shadow:var(--shadow-glow);
+}
+.aud-switch button{
+  position:relative;z-index:1;padding:9px var(--s3);border-radius:var(--r-pill);
+  font-size:.86rem;font-weight:600;color:var(--ink-dim);
+  transition:color var(--dur) var(--ease);white-space:nowrap;
+}
+.aud-switch button:hover{color:var(--ink);}
+.aud-switch button[aria-selected="true"],
+.aud-switch button[aria-selected="true"]:hover{color:#06070d;}
+
+/* audience gating */
+[data-aud="visitor"] [data-for]:not([data-for~="visitor"]),
+[data-aud="client"]  [data-for]:not([data-for~="client"]),
+[data-aud="lockr"]   [data-for]:not([data-for~="lockr"]){display:none !important;}
+main{transition:opacity var(--dur) var(--ease);}
+main.swapping{opacity:0;}
+
+/* ============================================================
+   LAYOUT PRIMITIVES
+   ============================================================ */
+.band{padding:var(--s8) clamp(16px,5vw,56px);max-width:var(--container);margin:0 auto;}
+.section-head{margin-bottom:var(--s6);max-width:62ch;}
+.section-head .tag{color:var(--cyan);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;}
+.section-head h2{font-size:clamp(1.8rem,4vw,2.7rem);margin-top:var(--s2);font-weight:700;line-height:1.1;}
+.section-head .lede{color:var(--ink-dim);margin-top:var(--s3);font-size:1.05rem;line-height:1.7;}
+.prose p{color:var(--ink-dim);line-height:1.75;margin-bottom:var(--s3);max-width:68ch;}
+.prose strong{color:var(--ink);font-weight:600;}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+
+.card{
+  background:var(--glass);border:1px solid var(--line);border-radius:var(--r-lg);padding:var(--s5);
+  transition:transform var(--dur) var(--ease),border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
+}
+.card.interactive:hover,.card.interactive:focus-within{
+  transform:translateY(-6px);border-color:var(--line-strong);box-shadow:var(--shadow-card);
+}
+.grid{display:grid;gap:var(--s4);}
+.grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+.grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+.grid.cols-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--s1);
+  padding:13px var(--s5);border-radius:var(--r-md);font-weight:600;font-size:.95rem;min-height:44px;
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),border-color var(--dur) var(--ease);
+}
+.btn-primary{background:var(--grad);background-size:200% 200%;color:#050608;box-shadow:0 8px 30px -10px rgba(139,92,246,.7);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 38px -8px rgba(236,72,153,.6);}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:var(--glass);}
+.btn-ghost:hover{border-color:var(--line-strong);transform:translateY(-2px);}
+
+.chip{
+  display:inline-flex;align-items:center;gap:var(--s1);padding:8px var(--s3);border-radius:var(--r-pill);
+  border:1px solid var(--line);background:var(--glass);color:var(--ink-dim);
+  font-size:.84rem;font-weight:500;min-height:40px;
+  transition:border-color var(--dur) var(--ease),color var(--dur) var(--ease),background var(--dur) var(--ease);
+}
+.chip:hover{color:var(--ink);border-color:var(--line-strong);}
+.chip[aria-pressed="true"]{color:var(--ink);border-color:var(--cyan);background:rgba(34,211,238,.1);}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:var(--s1);
+  font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);
+  border:1px solid var(--line);padding:7px var(--s3);border-radius:var(--r-pill);background:var(--glass);
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);flex:none;}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:calc(100svh - 40px);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:200px clamp(16px,5vw,56px) var(--s7);gap:var(--s4);
+}
+.hero h1{font-size:clamp(2.4rem,7.4vw,5rem);line-height:1.03;font-weight:700;}
+.hero .tagline{font-size:clamp(1rem,2.1vw,1.25rem);color:var(--ink-dim);max-width:60ch;font-weight:500;}
+.hero-buttons{display:flex;gap:var(--s3);flex-wrap:wrap;justify-content:center;margin-top:var(--s2);}
+.hero-meta{display:flex;gap:var(--s5);flex-wrap:wrap;justify-content:center;margin-top:var(--s5);color:var(--ink-faint);font-size:.82rem;}
+.hero-meta b{display:block;color:var(--ink);font-size:1.15rem;font-weight:700;font-family:'Space Grotesk',sans-serif;}
+.scroll-cue{margin-top:var(--s5);width:1px;height:48px;background:linear-gradient(var(--ink-dim),transparent);position:relative;}
+.scroll-cue::after{content:'';position:absolute;top:0;left:-3px;width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:down 2s ease-in-out infinite;}
+@keyframes down{0%{top:0;opacity:1;}90%{opacity:0;}100%{top:42px;opacity:0;}}
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--s6);align-items:start;}
+.quote-card{position:relative;overflow:hidden;}
+.quote-card::before{
+  content:'\201C';position:absolute;top:-38px;left:14px;font-size:9rem;font-family:'Space Grotesk',serif;
+  color:transparent;background:var(--grad);-webkit-background-clip:text;background-clip:text;opacity:.35;
+}
+.quote-card p{position:relative;font-size:1.12rem;font-weight:500;line-height:1.6;color:var(--ink);}
+.quote-card span{display:block;margin-top:var(--s3);color:var(--ink-dim);font-size:.84rem;}
+
+.icon-wrap{width:44px;height:44px;border-radius:var(--r-md);background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:var(--s3);flex:none;}
+.icon-wrap svg{width:22px;height:22px;stroke:#05060b;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.card h3{font-size:1.06rem;margin-bottom:var(--s1);}
+.card p{color:var(--ink-dim);font-size:.93rem;line-height:1.65;}
+
+/* timeline */
+.timeline{position:relative;padding-left:var(--s5);}
+.timeline::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--cyan),var(--violet),transparent);}
+.tl-item{position:relative;padding-bottom:var(--s5);}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{content:'';position:absolute;left:calc(-1 * var(--s5) + 1px);top:7px;width:9px;height:9px;border-radius:50%;background:var(--grad);box-shadow:0 0 12px rgba(139,92,246,.9);}
+.tl-year{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);font-weight:600;}
+.tl-item h3{font-size:1.02rem;margin:var(--s1) 0 4px;}
+.tl-item p{color:var(--ink-dim);font-size:.93rem;line-height:1.65;max-width:60ch;}
+
+/* stats */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4);text-align:center;}
+.stat-num{font-size:clamp(2rem,4.6vw,3.1rem);font-weight:700;}
+.stat-label{color:var(--ink-dim);font-size:.84rem;margin-top:var(--s1);}
+
+/* gallery */
+.filter-row{display:flex;gap:var(--s2);flex-wrap:wrap;margin-bottom:var(--s5);}
+.shot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:var(--s4);}
+.shot{
+  position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);
+  background:var(--bg-2);aspect-ratio:4 / 5;margin:0;
+  transition:transform var(--dur) var(--ease),border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
+}
+.shot:hover{transform:translateY(-6px);border-color:var(--line-strong);box-shadow:var(--shadow-card);}
+.shot img{width:100%;height:100%;object-fit:cover;}
+.shot.no-img img{display:none;}
+.shot.no-img::before{content:'';position:absolute;inset:0;background:var(--grad);background-size:220% 220%;opacity:.5;animation:shift 12s ease infinite;}
+.shot.no-img::after{
+  content:attr(data-fallback);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:var(--s4);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.05rem;
+  color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.65);
+}
+.shot figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:var(--s5) var(--s3) var(--s3);
+  background:linear-gradient(transparent,rgba(5,6,11,.94));font-size:.86rem;font-weight:600;
+}
+.shot figcaption small{display:block;color:var(--ink-dim);font-weight:400;font-size:.76rem;margin-top:2px;}
+.shot.hidden{display:none;}
+
+/* process */
+.step{display:flex;gap:var(--s4);align-items:flex-start;}
+.step-num{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;flex:none;width:36px;}
+.step h3{font-size:1.02rem;margin-bottom:4px;}
+.step p{color:var(--ink-dim);font-size:.93rem;line-height:1.65;}
+
+/* builder */
+.builder{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--s5);align-items:start;}
+.field{margin-bottom:var(--s5);}
+.field-label{display:block;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:var(--s2);}
+.field input,.field select,.field textarea{
+  width:100%;background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:12px var(--s3);color:var(--ink);font-size:.95rem;font-family:inherit;min-height:44px;
+  transition:border-color var(--dur) var(--ease);
+}
+.field textarea{min-height:92px;resize:vertical;line-height:1.6;}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--cyan);outline:none;}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink-faint);}
+.chip-set{display:flex;gap:var(--s2);flex-wrap:wrap;}
+.brief-preview{background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:var(--r-lg);padding:var(--s5);position:sticky;top:184px;}
+.brief-preview h3{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:var(--s3);font-family:'Inter',sans-serif;letter-spacing:.12em;}
+.brief-body{font-size:.92rem;line-height:1.8;color:var(--ink-dim);min-height:150px;}
+.brief-body b{color:var(--ink);font-weight:600;}
+.brief-preview .btn{width:100%;margin-top:var(--s4);}
+
+/* lockr */
+.lockr-mark{
+  display:block;width:clamp(170px,24vw,280px);aspect-ratio:705.95 / 490.54;
+  background:var(--grad);background-size:220% 220%;animation:shift 9s ease infinite;
+  -webkit-mask:var(--lockr-mask) center / contain no-repeat;
+  mask:var(--lockr-mask) center / contain no-repeat;
+  filter:drop-shadow(0 12px 42px rgba(139,92,246,.45));
+  transition:transform var(--dur) var(--ease),filter var(--dur) var(--ease);
+}
+.lockr-mark.sm{width:clamp(128px,17vw,190px);}
+.lockr-mark:hover{transform:translateY(-3px) scale(1.02);filter:drop-shadow(0 16px 54px rgba(236,72,153,.5));}
+.mark-row{display:flex;align-items:center;gap:var(--s4);flex-wrap:wrap;margin-bottom:var(--s4);}
+.lockr-hero-card{
+  background:linear-gradient(160deg,rgba(34,211,238,.09),rgba(139,92,246,.09) 50%,rgba(236,72,153,.09));
+  border:1px solid var(--line);border-radius:var(--r-xl);padding:clamp(26px,5vw,var(--s6));
+  position:relative;overflow:hidden;
+}
+.lockr-hero-card::before{content:'';position:absolute;width:520px;height:520px;background:var(--grad);filter:blur(140px);opacity:.15;top:-250px;right:-140px;pointer-events:none;}
+.lockr-hero-card > *{position:relative;}
+.studio-tabs{display:flex;gap:var(--s2);flex-wrap:wrap;margin-bottom:var(--s5);}
+.studio-tab{
+  padding:12px var(--s4);border-radius:var(--r-md);border:1px solid var(--line);background:var(--glass);
+  font-weight:600;font-size:.92rem;color:var(--ink-dim);min-height:44px;
+  transition:color var(--dur) var(--ease),border-color var(--dur) var(--ease),background var(--dur) var(--ease),transform var(--dur) var(--ease);
+}
+.studio-tab:hover{color:var(--ink);transform:translateY(-2px);}
+.studio-tab[aria-selected="true"]{color:var(--ink);border-color:var(--line-strong);background:var(--glass-2);box-shadow:var(--shadow-card);}
+.studio-panel[hidden]{display:none;}
+.studio-panel{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);align-items:start;animation:fade .45s var(--ease);}
+@keyframes fade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+.studio-panel h3{font-size:1.4rem;margin-bottom:var(--s2);}
+.studio-panel .who{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:var(--s2);}
+.studio-panel p{color:var(--ink-dim);line-height:1.7;}
+.feature-list{list-style:none;display:grid;gap:var(--s2);margin-top:var(--s4);}
+.feature-list li{display:flex;gap:var(--s2);align-items:flex-start;color:var(--ink-dim);font-size:.93rem;line-height:1.6;}
+.feature-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--grad);flex:none;margin-top:8px;}
+.model-wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:var(--s3);}
+.model-card{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:var(--s2);
+  min-height:150px;padding:var(--s4) var(--s3);
+  border:1px solid var(--line);border-radius:var(--r-lg);background:var(--glass);
+  transition:transform var(--dur) var(--ease),border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
+}
+.model-card:hover{transform:translateY(-5px);border-color:var(--line-strong);box-shadow:var(--shadow-card);}
+.model-mark{display:flex;align-items:center;justify-content:center;height:34px;}
+.model-mark svg{width:32px;height:32px;fill:var(--ink);opacity:.9;transition:opacity var(--dur) var(--ease);}
+.model-card:hover .model-mark svg{opacity:1;}
+.model-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;letter-spacing:-0.01em;}
+.model-card.wordmark .model-name{font-size:1.45rem;height:34px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.model-card.wordmark .model-name.long{font-size:1.1rem;line-height:1.2;}
+.model-role{color:var(--ink-faint);font-size:.78rem;line-height:1.45;}
+.model-note{color:var(--ink-faint);font-size:.78rem;margin-top:var(--s4);}
+.pipe{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:var(--s3);}
+.pipe-step{background:var(--glass);border:1px solid var(--line);border-radius:var(--r-md);padding:var(--s4);}
+.pipe-step .n{font-size:.7rem;letter-spacing:.14em;color:var(--cyan);font-weight:700;display:block;margin-bottom:var(--s1);}
+.pipe-step h3{font-size:.95rem;margin-bottom:var(--s1);font-weight:600;}
+.pipe-step p{color:var(--ink-dim);font-size:.86rem;line-height:1.6;}
+
+/* testimonials */
+.testi-card p{color:var(--ink);line-height:1.65;font-size:.97rem;margin-bottom:var(--s3);}
+.testi-name{font-weight:600;font-size:.92rem;}
+.testi-role{color:var(--ink-dim);font-size:.8rem;}
+.stars{color:var(--cyan);letter-spacing:2px;margin-bottom:var(--s2);font-size:.85rem;}
+
+/* contact */
+.contact-box{
+  background:var(--glass);border:1px solid var(--line);border-radius:var(--r-xl);
+  padding:clamp(30px,5vw,var(--s7));text-align:center;display:flex;flex-direction:column;
+  align-items:center;gap:var(--s4);position:relative;overflow:hidden;
+}
+.contact-box::before{content:'';position:absolute;width:420px;height:420px;background:var(--grad);filter:blur(130px);opacity:.16;top:-200px;left:50%;transform:translateX(-50%);}
+.contact-box > *{position:relative;}
+.contact-box h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;}
+.contact-box p{color:var(--ink-dim);max-width:52ch;}
+.social-row{display:flex;gap:var(--s2);margin-top:var(--s1);}
+.social-row a{width:44px;height:44px;border-radius:var(--r-md);border:1px solid var(--line);background:var(--glass);display:flex;align-items:center;justify-content:center;transition:transform var(--dur) var(--ease),border-color var(--dur) var(--ease);}
+.social-row a:hover{transform:translateY(-3px);border-color:var(--cyan);}
+.social-row svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:2;}
+.qr-card{margin-top:var(--s2);padding-top:var(--s5);border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:var(--s3);width:100%;}
+.qr-frame{padding:14px;border-radius:var(--r-lg);background:var(--grad);box-shadow:var(--shadow-glow);}
+.qr-frame canvas{display:block;border-radius:var(--r-sm);}
+.qr-label{font-size:.85rem;color:var(--ink-dim);}
+
+/* footer + game */
+footer{border-top:1px solid var(--line);padding:var(--s7) clamp(16px,5vw,56px) var(--s6);display:flex;flex-direction:column;align-items:center;gap:var(--s4);}
+.game-wrap{width:100%;max-width:640px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--glass);padding:var(--s3);}
+.game-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--s2);font-size:.74rem;color:var(--ink-dim);letter-spacing:.06em;text-transform:uppercase;}
+#dino-canvas{width:100%;height:160px;display:block;border-radius:var(--r-md);background:linear-gradient(180deg,#0a0d18,#05060b);cursor:pointer;touch-action:manipulation;}
+.game-hint{text-align:center;font-size:.74rem;color:var(--ink-dim);margin-top:var(--s2);}
+.footer-meta{color:var(--ink-dim);font-size:.82rem;text-align:center;}
+.footer-meta a{color:var(--ink);}
+
+/* toast */
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,160%);z-index:120;
+  background:var(--bg-2);border:1px solid var(--line-strong);border-radius:var(--r-pill);
+  padding:12px var(--s5);font-size:.9rem;box-shadow:var(--shadow-card);
+  transition:transform var(--dur) var(--ease);
+}
+.toast.show{transform:translate(-50%,0);}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:900px){
+  .split,.builder,.studio-panel{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .nav-links{display:none;}
+  .brief-preview{position:static;}
+  html{scroll-padding-top:132px;}
+}
+@media (max-width:620px){
+  :root{--s7:56px;--s8:76px;}
+  .hero{padding-top:176px;}
+  .switch-hint{display:none;}
+  .aud-switch{width:100%;grid-template-columns:repeat(3,1fr);}
+  .aud-switch button{padding:9px 4px;font-size:.8rem;}
+  .shot-grid{grid-template-columns:repeat(auto-fill,minmax(148px,1fr));}
+  .hero-meta{gap:var(--s4);}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+  .reveal{opacity:1;transform:none;}
+}
+</style>
+</head>
 <body>
-<nav><strong>Will Collins</strong><div><a href='#about'>About</a><a href='#experience'>Experience</a><a href='#work'>Work</a><a href='#resume'>Resume</a></div></nav>
-<section class='hero'><div class='hero-content'><div class='tag'>FOUNDER OF WILCO MEDIA • XAVIER ATHLETICS GRAPHIC DESIGN SPECIALIST</div><h1>Building a career at the intersection of sports, creativity, and entrepreneurship.</h1><p>I'm Will Collins, a Marketing student at Xavier University, founder of Wilco Media, and Graphic Design Specialist for Xavier Athletics. My goal is to build a leading sports design and digital marketing business, helping athletes, teams, and organizations tell compelling stories through design, branding, and innovation.</p></div></section>
-<section class='section'><div class='grid'><div class='card'><h3>1,000+</h3><p>Athletes served through Wilco Media.</p></div><div class='card'><h3>150+</h3><p>Creative assets produced for Xavier Athletics.</p></div><div class='card'><h3>8+</h3><p>Years of sports design experience.</p></div><div class='card'><h3>2022</h3><p>Founded Wilco Media.</p></div></div></section>
-<section id='about' class='section'><h2>About</h2><p>Originally from Pittsburgh, Pennsylvania, and a graduate of Pittsburgh Central Catholic High School, I am currently pursuing a degree in Marketing at Xavier University. My work focuses on sports graphic design, digital marketing, branding, web design, and creative strategy.</p></section>
-<section id='experience' class='section'><h2>Experience Timeline</h2><div class='timeline-item'><strong>2018-2022 | Tipton Edits</strong><br>Produced recruiting graphics, commitment graphics, and jersey swaps for highly ranked high school basketball prospects featured across major recruiting platforms.</div><div class='timeline-item'><strong>2022-Present | Wilco Media (Founder & Owner)</strong><br>Built a sports-focused creative business serving more than 1,000 athletes. Expanded services into branding, web design, digital marketing, and emerging AI-powered creative solutions.</div><div class='timeline-item'><strong>2024-Present | Xavier Athletics</strong><br>Created 150+ pieces of content across social and digital platforms, including media guide designs, player announcements, championship campaigns, Hall of Fame graphics, and game-day creative.</div></section>
-<section id='work' class='section'><h2>Selected Work</h2><div class='grid'><div class='card'><h3>Xavier Athletics</h3><p>Produced creative for Xavier Men's Basketball, Xavier Baseball, Xavier Men's Soccer, Hall of Fame campaigns, media guides, player announcements, MLS Draft content, and Big East recognition graphics.</p></div><div class='card'><h3>Wilco Media</h3><p>Developed commitment graphics, athlete branding campaigns, professional sports concepts, recruiting content, social media creative, and custom design solutions for more than 1,000 athletes.</p></div></div></section>
-<section id='resume' class='section'><div class='resume'><h2>Resume Snapshot</h2><p><strong>Education:</strong> Xavier University, Marketing</p><p><strong>Specialties:</strong> Sports Design, Digital Marketing, Branding, Social Media Strategy, Web Design, Creative Direction, Entrepreneurship, AI Tools.</p><p><strong>Organizations:</strong> Wilco Media, Xavier Athletics, Tipton Edits.</p></div></section>
-<footer>© 2026 Will Collins. All Rights Reserved.</footer>
-</body></html>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="orbs" aria-hidden="true">
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+</div>
+<div class="noise" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="header-row">
+    <a class="brand grad-text" href="#top">WILL COLLINS</a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#about"        data-for="visitor">About</a>
+      <a href="#story"        data-for="visitor">Story</a>
+      <a href="#impact"       data-for="visitor client">Impact</a>
+      <a href="#now"          data-for="visitor">Now</a>
+      <a href="#services"     data-for="client">Services</a>
+      <a href="#work"         data-for="client">Work</a>
+      <a href="#process"      data-for="client">Process</a>
+      <a href="#start"        data-for="client">Start a project</a>
+      <a href="#lockr"        data-for="lockr">LOCKR</a>
+      <a href="#studios"      data-for="lockr">Studios</a>
+      <a href="#models"       data-for="lockr">Models</a>
+      <a href="#pipeline"     data-for="lockr">How it works</a>
+      <a href="#contact"      data-for="visitor client lockr">Contact</a>
+    </nav>
+  </div>
+  <div class="switch-row">
+    <span class="switch-hint">I'm here as a</span>
+    <div class="aud-switch" role="tablist" aria-label="Choose what this site shows you" id="aud-switch">
+      <span class="thumb" aria-hidden="true" id="aud-thumb"></span>
+      <button role="tab" id="tab-visitor" data-aud-btn="visitor" aria-selected="true"  aria-controls="main" tabindex="0">Visitor</button>
+      <button role="tab" id="tab-client"  data-aud-btn="client"  aria-selected="false" aria-controls="main" tabindex="-1">Client</button>
+      <button role="tab" id="tab-lockr"   data-aud-btn="lockr"   aria-selected="false" aria-controls="main" tabindex="-1">LOCKR</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" role="tabpanel" aria-labelledby="tab-visitor" tabindex="-1">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top" data-for="visitor client lockr">
+    <span class="eyebrow" data-for="visitor"><span class="dot"></span> Founder, Wilco Media · Xavier University</span>
+    <span class="eyebrow" data-for="client"><span class="dot"></span> Taking projects for the 2026 season</span>
+    <span class="eyebrow" data-for="lockr"><span class="dot"></span> LOCKR · Sports Creative OS · In development</span>
+
+    <h1 data-for="visitor">Where Sports<br>Becomes <span class="grad-text">Art</span></h1>
+    <h1 data-for="client">Your moment,<br><span class="grad-text">designed</span> to be shared.</h1>
+    <h1 data-for="lockr">The sports<br>creative <span class="grad-text">OS</span>.</h1>
+
+    <p class="tagline" data-for="visitor">I'm Will Collins. I build visual media at the intersection of art, sports, and culture — for athletes who refuse to blend in.</p>
+    <p class="tagline" data-for="client">Commitment graphics, team campaigns, and full brand systems — delivered fast, built for the feed, made specifically for you.</p>
+    <p class="tagline" data-for="lockr">LOCKR puts three studios and 40+ leading image and video models behind one curated system, so a program's identity holds at scale.</p>
+
+    <div class="hero-buttons">
+      <a href="#about"    class="btn btn-primary" data-for="visitor">Get to know me</a>
+      <a href="#lockr-teaser" class="btn btn-ghost" data-for="visitor">See what I'm building</a>
+      <a href="#start"    class="btn btn-primary" data-for="client">Start a project</a>
+      <a href="#work"     class="btn btn-ghost"   data-for="client">See the work</a>
+      <a href="#studios"  class="btn btn-primary" data-for="lockr">Tour the studios</a>
+      <a href="#contact"  class="btn btn-ghost"   data-for="lockr">Request early access</a>
+    </div>
+
+    <div class="hero-meta" data-for="visitor client">
+      <div><b>1,350+</b>athletes served</div>
+      <div><b>700+</b>schools &amp; colleges</div>
+      <div><b>45+</b>states reached</div>
+    </div>
+    <div class="hero-meta" data-for="lockr">
+      <div><b>3</b>studios</div>
+      <div><b>40+</b>generation models</div>
+      <div><b>1</b>identity, preserved</div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true"></div>
+  </section>
+
+  <!-- ================= VISITOR ================= -->
+  <section id="about" class="band reveal" data-for="visitor">
+    <div class="section-head">
+      <p class="tag">About</p>
+      <h2>The person behind the pixels</h2>
+    </div>
+    <div class="split">
+      <div class="prose">
+        <p>I'm Will Collins — designer, founder, and the person behind <strong>Wilco Media</strong>, a sports design agency built for athletes, teams, and programs who want their biggest moments to look as good as they feel.</p>
+        <p>What started as a way to help friends announce their college commitments has grown into a studio that's worked with <strong>1,350+ athletes</strong> across <strong>700+ high schools and colleges</strong>, spanning <strong>45+ states and 3+ countries</strong>.</p>
+        <p>I'm currently studying at <strong>Xavier University</strong> while running Wilco Media on the side — balancing the classroom with client work, and bringing a designer's eye to everything from a single commitment graphic to a full brand system.</p>
+        <p>Lately most of my time goes to <strong>LOCKR</strong>, a sports creative OS I've been building for the last few months. It's the thing I'd have wanted three years ago.</p>
+      </div>
+      <div class="card quote-card">
+        <p>Visual media at the intersection of art, sports, and culture — built for athletes who refuse to blend in.</p>
+        <span>— Wilco Media mission statement</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="band reveal" data-for="visitor">
+    <div class="section-head">
+      <p class="tag">Story</p>
+      <h2>How it actually happened</h2>
+      <p class="lede">No plan, no agency background. One favour for a friend that kept going.</p>
+    </div>
+    <div class="split">
+      <div class="timeline">
+        <div class="tl-item">
+          <p class="tl-year">The start</p>
+          <h3>A commitment post for a friend</h3>
+          <p>A teammate committed and had nothing to post. I made him something. His whole roster asked for one next.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">Growth</p>
+          <h3>Word of mouth did the marketing</h3>
+          <p>Athletes tagged the work, coaches shared it, and requests started arriving from schools I'd never heard of. Wilco Media became a real business.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">Scale</p>
+          <h3>1,350+ athletes, 45+ states</h3>
+          <p>Volume forced a system: repeatable templates, a consistent visual language, and a turnaround people could count on.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">Now</p>
+          <h3>Building LOCKR</h3>
+          <p>The bottleneck was never taste — it was throughput. LOCKR is the answer: a creative OS that keeps identity intact while the volume goes up.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.6h7.6z"/></svg></div>
+        <h3>What I'm actually good at</h3>
+        <p>Taking a moment that matters to one person and making it legible to everyone else — in a format that survives a phone screen and a two-second scroll.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="lockr-teaser" class="band reveal" data-for="visitor">
+    <div class="lockr-hero-card">
+      <div class="mark-row">
+        <span class="lockr-mark sm" role="img" aria-label="LOCKR"></span>
+        <span class="eyebrow"><span class="dot"></span> Currently building</span>
+      </div>
+      <h2 style="font-size:clamp(1.7rem,4vw,2.5rem);margin:0 0 var(--s3);">LOCKR — a sports creative <span class="grad-text">OS</span></h2>
+      <p style="color:var(--ink-dim);max-width:64ch;line-height:1.75;">Three studios, 40+ of the world's leading image and video generation models, and a curated prompt-and-system layer that keeps an athlete's or a program's identity intact at scale. It's the part of the work that needed a product, not more hours.</p>
+      <div class="hero-buttons" style="justify-content:flex-start;">
+        <button class="btn btn-primary" data-goto-aud="lockr">Show me LOCKR</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="now" class="band reveal" data-for="visitor">
+    <div class="section-head">
+      <p class="tag">Now</p>
+      <h2>What I'm on this season</h2>
+    </div>
+    <div class="grid cols-3">
+      <div class="card"><div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg></div><h3>Shipping LOCKR</h3><p>Moving the three studios from working prototype toward something programs can run on day to day.</p></div>
+      <div class="card"><div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"/><path d="M8 16v-5M12 16V8M16 16v-3"/></svg></div><h3>Studying at Xavier</h3><p>Business coursework by day, client work at night. The two feed each other more than I expected.</p></div>
+      <div class="card"><div class="icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div><h3>Still taking clients</h3><p>Commitment season never really stops. Wilco Media is open for projects.</p></div>
+    </div>
+  </section>
+
+  <!-- ================= CLIENT ================= -->
+  <section id="services" class="band reveal" data-for="client">
+    <div class="section-head">
+      <p class="tag">Services</p>
+      <h2>What I create</h2>
+      <p class="lede">Four ways people work with Wilco Media. Most start with the first two.</p>
+    </div>
+    <div class="grid cols-4">
+      <div class="card interactive">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div>
+        <h3>Custom Sports Design</h3>
+        <p>Bold, athlete-specific graphics that turn a highlight, a stat line, or a moment into something worth sharing.</p>
+      </div>
+      <div class="card interactive">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.6h7.6z"/></svg></div>
+        <h3>Commitment Announcements</h3>
+        <p>Graphics built for the moment athletes make it official — sized and framed for Instagram, TikTok, and X.</p>
+      </div>
+      <div class="card interactive">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M9 20h6M12 16v4"/></svg></div>
+        <h3>Sports Visual Media</h3>
+        <p>End-to-end visual content for teams, programs, and brands — from one graphic to a season-long campaign.</p>
+      </div>
+      <div class="card interactive">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg></div>
+        <h3>LOCKR for Programs</h3>
+        <p>The creative OS behind the studio, licensed to programs that need volume without losing their identity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="band reveal" data-for="client">
+    <div class="section-head">
+      <p class="tag">Work</p>
+      <h2>Selected projects</h2>
+      <p class="lede">Filter by what you need. Every piece here shipped to a real athlete, team, or program.</p>
+    </div>
+    <div class="filter-row" role="group" aria-label="Filter work by type">
+      <button class="chip" data-filter="all"        aria-pressed="true">All</button>
+      <button class="chip" data-filter="commitment" aria-pressed="false">Commitments</button>
+      <button class="chip" data-filter="team"       aria-pressed="false">Team &amp; program</button>
+      <button class="chip" data-filter="brand"      aria-pressed="false">Brand systems</button>
+      <button class="chip" data-filter="motion"     aria-pressed="false">Motion</button>
+    </div>
+    <div class="shot-grid" id="shot-grid">
+      <figure class="shot" data-cat="commitment" data-fallback="Commitment · D1 Basketball">
+        <img src="media/work-01.jpg" alt="Commitment announcement graphic for a Division I basketball signee" loading="lazy" decoding="async">
+        <figcaption>D1 Basketball Commitment<small>Announcement graphic · Instagram 4:5</small></figcaption>
+      </figure>
+      <figure class="shot" data-cat="commitment" data-fallback="Commitment · Football">
+        <img src="media/work-02.jpg" alt="Commitment announcement graphic for a football signee" loading="lazy" decoding="async">
+        <figcaption>Signing Day Set<small>Announcement graphic · multi-platform</small></figcaption>
+      </figure>
+      <figure class="shot" data-cat="team" data-fallback="Program · Season Opener">
+        <img src="media/work-03.jpg" alt="Season opener graphic for a high school program" loading="lazy" decoding="async">
+        <figcaption>Season Opener Campaign<small>Program visual · full slate</small></figcaption>
+      </figure>
+      <figure class="shot" data-cat="brand" data-fallback="Brand · Identity System">
+        <img src="media/work-04.jpg" alt="Brand identity system built for an athletics program" loading="lazy" decoding="async">
+        <figcaption>Program Identity System<small>Marks, type, colour, templates</small></figcaption>
+      </figure>
+      <figure class="shot" data-cat="motion" data-fallback="Motion · Hype Edit">
+        <img src="media/work-05.jpg" alt="Still frame from an animated hype edit for a team" loading="lazy" decoding="async">
+        <figcaption>Hype Edit<small>Motion graphic · 15s vertical</small></figcaption>
+      </figure>
+      <figure class="shot" data-cat="team" data-fallback="Program · Player Cards">
+        <img src="media/work-06.jpg" alt="Player card series designed for a full roster" loading="lazy" decoding="async">
+        <figcaption>Roster Card Series<small>Program visual · 22 athletes</small></figcaption>
+      </figure>
+      <figure class="shot" data-cat="commitment" data-fallback="Commitment · Soccer">
+        <img src="media/work-07.jpg" alt="Commitment announcement graphic for a soccer signee" loading="lazy" decoding="async">
+        <figcaption>Soccer Commitment<small>Announcement graphic · 4:5</small></figcaption>
+      </figure>
+      <figure class="shot" data-cat="brand" data-fallback="Brand · Merch Drop">
+        <img src="media/work-08.jpg" alt="Merch drop artwork designed as part of a brand system" loading="lazy" decoding="async">
+        <figcaption>Merch Drop Artwork<small>Brand extension · apparel</small></figcaption>
+      </figure>
+    </div>
+    <p class="qr-label" id="shot-count" style="margin-top:var(--s4);" aria-live="polite"></p>
+  </section>
+
+  <section id="process" class="band reveal" data-for="client">
+    <div class="section-head">
+      <p class="tag">Process</p>
+      <h2>How a project runs</h2>
+      <p class="lede">Simple on purpose. Most commitment graphics go from ask to post inside 48 hours.</p>
+    </div>
+    <div class="grid cols-2">
+      <div class="card step"><span class="step-num">01</span><div><h3>You send the moment</h3><p>Photos, school, colours, the date it goes live. A rough idea is enough — I'll tell you what's missing.</p></div></div>
+      <div class="card step"><span class="step-num">02</span><div><h3>I build the first pass</h3><p>You get a real design, not a mood board. Usually within a day for single graphics.</p></div></div>
+      <div class="card step"><span class="step-num">03</span><div><h3>We tune it</h3><p>Two rounds of revisions included. Crop, colour, type, whatever it takes to make it yours.</p></div></div>
+      <div class="card step"><span class="step-num">04</span><div><h3>You post it</h3><p>Delivered in every size you need, ready to go live the moment it's official.</p></div></div>
+    </div>
+  </section>
+
+  <section id="start" class="band reveal" data-for="client">
+    <div class="section-head">
+      <p class="tag">Start here</p>
+      <h2>Build your brief</h2>
+      <p class="lede">Answer four things and this writes your project brief as you go. Send it when it looks right.</p>
+    </div>
+    <div class="builder">
+      <form id="brief-form" novalidate>
+        <div class="field">
+          <span class="field-label" id="lbl-type">What do you need?</span>
+          <div class="chip-set" role="group" aria-labelledby="lbl-type">
+            <button type="button" class="chip" data-brief="type" data-value="a commitment graphic" aria-pressed="true">Commitment graphic</button>
+            <button type="button" class="chip" data-brief="type" data-value="team and program visuals" aria-pressed="false">Team / program visuals</button>
+            <button type="button" class="chip" data-brief="type" data-value="a full brand system" aria-pressed="false">Brand system</button>
+            <button type="button" class="chip" data-brief="type" data-value="a motion edit" aria-pressed="false">Motion edit</button>
+          </div>
+        </div>
+        <div class="field">
+          <span class="field-label" id="lbl-who">Who is it for?</span>
+          <div class="chip-set" role="group" aria-labelledby="lbl-who">
+            <button type="button" class="chip" data-brief="who" data-value="an individual athlete" aria-pressed="true">An athlete</button>
+            <button type="button" class="chip" data-brief="who" data-value="a team" aria-pressed="false">A team</button>
+            <button type="button" class="chip" data-brief="who" data-value="a school or college program" aria-pressed="false">A program</button>
+            <button type="button" class="chip" data-brief="who" data-value="a brand" aria-pressed="false">A brand</button>
+          </div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="brief-when">When do you need it?</label>
+          <select id="brief-when">
+            <option value="within 48 hours">Within 48 hours</option>
+            <option value="this week" selected>This week</option>
+            <option value="within the month">Within the month</option>
+            <option value="no fixed date yet">No fixed date yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label" for="brief-name">Your name</label>
+          <input id="brief-name" type="text" placeholder="Who am I talking to?" autocomplete="name">
+        </div>
+        <div class="field">
+          <label class="field-label" for="brief-notes">Anything else</label>
+          <textarea id="brief-notes" placeholder="Sport, school, colours, the idea in your head..."></textarea>
+        </div>
+      </form>
+
+      <aside class="brief-preview" aria-live="polite">
+        <h3>Your brief</h3>
+        <div class="brief-body" id="brief-body"></div>
+        <a class="btn btn-primary" id="brief-send" href="#">Send this brief</a>
+        <button class="btn btn-ghost" id="brief-copy" style="width:100%;margin-top:var(--s2);" type="button">Copy to clipboard</button>
+      </aside>
+    </div>
+  </section>
+
+  <section id="testimonials" class="band reveal" data-for="client">
+    <div class="section-head">
+      <p class="tag">Testimonials</p>
+      <h2>What clients say</h2>
+    </div>
+    <div class="grid cols-3">
+      <div class="card testi-card"><div class="stars" aria-label="5 out of 5">★★★★★</div><p>&ldquo;Responded very fast, and made me a great edit in the time promised.&rdquo;</p><p class="testi-name">Isaac Shelby</p><p class="testi-role">Client</p></div>
+      <div class="card testi-card"><div class="stars" aria-label="5 out of 5">★★★★★</div><p>&ldquo;Professionally designed edits — I'd recommend Wilco for any commitment post.&rdquo;</p><p class="testi-name">Jimmy Giannetta</p><p class="testi-role">Client</p></div>
+      <div class="card testi-card"><div class="stars" aria-label="5 out of 5">★★★★★</div><p>&ldquo;Working with Wilco was great, he made my commitment post look awesome.&rdquo;</p><p class="testi-name">Tommy Kristian</p><p class="testi-role">Client</p></div>
+    </div>
+  </section>
+
+  <!-- ================= LOCKR ================= -->
+  <section id="lockr" class="band reveal" data-for="lockr">
+    <div class="lockr-hero-card">
+      <div class="mark-row">
+        <span class="lockr-mark" role="img" aria-label="LOCKR"></span>
+        <span class="eyebrow"><span class="dot"></span> Built over the last few months</span>
+      </div>
+      <h2 style="font-size:clamp(1.8rem,4.4vw,2.7rem);margin:var(--s3) 0;">A creative operating system for sports</h2>
+      <p style="color:var(--ink-dim);max-width:66ch;line-height:1.75;">LOCKR is what happens when a design studio hits its ceiling. Three studios cover the three people who need visuals — the athlete, the creative, and the program. Underneath them sits a compiled layer of <strong style="color:var(--ink)">40+ of the world's leading image and video generation models</strong>, wrapped in curated prompts and systems built for one hard problem: <strong style="color:var(--ink)">identity preservation at scale</strong>.</p>
+      <div class="grid cols-3" style="margin-top:var(--s5);">
+        <div class="card"><h3>3 Studios</h3><p>Athlete, Creative, and Program — each with its own workflow, not a rebadged version of the same one.</p></div>
+        <div class="card"><h3>40+ Models</h3><p>The leading image and video generators, compiled behind one interface and routed per job.</p></div>
+        <div class="card"><h3>Identity, held</h3><p>Curated prompt and system layers so a face, a kit, and a mark stay right across hundreds of outputs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="studios" class="band reveal" data-for="lockr">
+    <div class="section-head">
+      <p class="tag">Studios</p>
+      <h2>Three studios, three jobs</h2>
+      <p class="lede">Pick one to see what it does.</p>
+    </div>
+    <div class="studio-tabs" role="tablist" aria-label="LOCKR studios">
+      <button class="studio-tab" role="tab" id="st-athlete"  aria-controls="pn-athlete"  aria-selected="true"  tabindex="0">Athlete Studio</button>
+      <button class="studio-tab" role="tab" id="st-creative" aria-controls="pn-creative" aria-selected="false" tabindex="-1">Creative Studio</button>
+      <button class="studio-tab" role="tab" id="st-program"  aria-controls="pn-program"  aria-selected="false" tabindex="-1">Program Studio</button>
+    </div>
+
+    <div class="studio-panel" role="tabpanel" id="pn-athlete" aria-labelledby="st-athlete" tabindex="0">
+      <div>
+        <p class="who">For the athlete</p>
+        <h3>Athlete Studio</h3>
+        <p>Your face, your kit, your moment — generated without turning into someone else. Upload a reference set once and every graphic after that recognises you.</p>
+        <ul class="feature-list">
+          <li>Identity-locked generation from a personal reference set</li>
+          <li>Commitment, signing day, and milestone templates</li>
+          <li>Every platform aspect ratio exported in one pass</li>
+          <li>Recruiting-ready asset library that stays organised</li>
+        </ul>
+      </div>
+      <div class="card"><div class="icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div><h3>The problem it solves</h3><p>Generic AI tools give you a stranger wearing your jersey. Athlete Studio holds the likeness constant so the output is usable the first time, not the tenth.</p></div>
+    </div>
+
+    <div class="studio-panel" role="tabpanel" id="pn-creative" aria-labelledby="st-creative" tabindex="0" hidden>
+      <div>
+        <p class="who">For the designer</p>
+        <h3>Creative Studio</h3>
+        <p>The full model wall, unlocked. Route a job to whichever of the 40+ generators actually fits it, with curated prompt systems doing the part nobody wants to redo by hand.</p>
+        <ul class="feature-list">
+          <li>40+ image and video models behind one interface</li>
+          <li>Curated prompt systems tuned per model, per job type</li>
+          <li>Side-by-side comparison before you commit a render</li>
+          <li>Reusable style locks so a series stays a series</li>
+        </ul>
+      </div>
+      <div class="card"><div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/></svg></div><h3>The problem it solves</h3><p>Model-hopping eats the day. Creative Studio compiles the choice into one place and remembers what worked, so taste scales instead of resetting.</p></div>
+    </div>
+
+    <div class="studio-panel" role="tabpanel" id="pn-program" aria-labelledby="st-program" tabindex="0" hidden>
+      <div>
+        <p class="who">For the program</p>
+        <h3>Program Studio</h3>
+        <p>A whole roster, a whole season, one identity. Load the brand once and generate across every athlete without the fifteenth graphic drifting off-system.</p>
+        <ul class="feature-list">
+          <li>Roster-wide batch generation from a single brand system</li>
+          <li>Brand guardrails on colour, mark, type, and crop</li>
+          <li>Season calendars and repeatable campaign slates</li>
+          <li>Shared library so staff and athletes pull the same assets</li>
+        </ul>
+      </div>
+      <div class="card"><div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div><h3>The problem it solves</h3><p>Programs don't need one great graphic, they need two hundred consistent ones. Program Studio makes volume the easy case instead of the failure case.</p></div>
+    </div>
+  </section>
+
+  <section id="models" class="band reveal" data-for="lockr">
+    <div class="section-head">
+      <p class="tag">Under the hood</p>
+      <h2>40+ models, one decision</h2>
+      <p class="lede">LOCKR compiles the leading image and video generators and routes each job to the one that fits, so the choice stops being your problem. A few of the names inside Creative Studio:</p>
+    </div>
+
+    <div class="model-wall">
+      <div class="model-card">
+        <span class="model-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg></span>
+        <span class="model-name">OpenAI</span>
+        <span class="model-role">GPT Image · Sora</span>
+      </div>
+      <div class="model-card">
+        <span class="model-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg></span>
+        <span class="model-name">Google Gemini</span>
+        <span class="model-role">Gemini image · Veo</span>
+      </div>
+      <div class="model-card">
+        <span class="model-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M24 10.262v2.712h-9.518V24h-3.034V10.262zm0-5.131v2.717H8.755V24H5.722V5.131zM24 0v2.717H3.034V24H0V0z"/></svg></span>
+        <span class="model-name">Replicate</span>
+        <span class="model-role">Open-model routing</span>
+      </div>
+      <div class="model-card">
+        <span class="model-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19.8772 1.4685L24 2.5326v18.9426l-4.1228 1.0563V1.4685zm-13.3481 9.428l4.115 1.0641v8.9786l-4.115 1.0642v-11.107zM0 2.572l4.115 1.0642v16.7354L0 21.428V2.572zm17.4553 5.6205v11.107l-4.1228-1.0642V9.2568l4.1228-1.0642z"/></svg></span>
+        <span class="model-name">ByteDance</span>
+        <span class="model-role">Seedance · Seedream</span>
+      </div>
+      <div class="model-card">
+        <span class="model-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.315 12.264c2.33 0 4.218 1.88 4.218 4.2V19.8c0 2.32-1.888 4.2-4.218 4.2h-6.202a4.218 4.218 0 0 1-4.023-2.938l-3.676 1.833a2.04 2.04 0 0 1-2.731-.903 2.015 2.015 0 0 1-.216-.907v-5.94a2.03 2.03 0 0 1 2.035-2.024 2.044 2.044 0 0 1 .919.218l3.673 1.85a4.218 4.218 0 0 1 4.02-2.925zm-.062 2.162h-6.078c-1.153 0-2.09.921-2.108 2.065v3.247c0 1.148.925 2.081 2.073 2.1h6.113c1.153 0 2.09-.922 2.109-2.065v-3.247a2.104 2.104 0 0 0-2.074-2.1zM4.18 15.72a.554.554 0 0 0-.555.542v3.734a.556.556 0 0 0 .798.496l.01-.004 3.463-1.756V17.51l-3.467-1.73a.557.557 0 0 0-.249-.06zM9.28 0a5.667 5.667 0 0 1 4.98 2.965 4.921 4.921 0 0 1 3.36-1.317c2.714 0 4.913 2.177 4.913 4.863 0 2.686-2.2 4.863-4.912 4.863a4.921 4.921 0 0 1-3.996-2.034 5.651 5.651 0 0 1-4.345 2.034c-3.131 0-5.67-2.546-5.67-5.687C3.61 2.546 6.149 0 9.28 0Zm8.34 3.926c-1.441 0-2.61 1.157-2.61 2.585s1.169 2.585 2.61 2.585c1.443 0 2.612-1.157 2.612-2.585s-1.169-2.585-2.611-2.585zM9.28 2.287a3.395 3.395 0 0 0-3.39 3.4c0 1.877 1.518 3.4 3.39 3.4a3.395 3.395 0 0 0 3.39-3.4c0-1.878-1.518-3.4-3.39-3.4z"/></svg></span>
+        <span class="model-name">Kuaishou</span>
+        <span class="model-role">Kling video</span>
+      </div>
+      <div class="model-card wordmark">
+        <span class="model-name">Runway</span>
+        <span class="model-role">Gen video · edit tools</span>
+      </div>
+      <div class="model-card wordmark">
+        <span class="model-name">fal<span class="grad-text">.ai</span></span>
+        <span class="model-role">Fast inference layer</span>
+      </div>
+      <div class="model-card wordmark">
+        <span class="model-name">Grok</span>
+        <span class="model-role">xAI image generation</span>
+      </div>
+      <div class="model-card wordmark">
+        <span class="model-name">FLUX</span>
+        <span class="model-role">Black Forest Labs · image</span>
+      </div>
+      <div class="model-card wordmark">
+        <span class="model-name long">Dream Machine</span>
+        <span class="model-role">Luma AI video</span>
+      </div>
+    </div>
+    <p class="model-note">Ten of the 40+ compiled behind Creative Studio. All names and marks are the property of their respective owners; shown here to say what LOCKR routes to.</p>
+
+    <div class="grid cols-3" style="margin-top:var(--s6);">
+      <div class="card"><h3>Why compile them at all?</h3><p>No single model is best at everything. One nails photoreal portraiture, another handles type and layout, a third does motion. Picking wrong costs a day.</p></div>
+      <div class="card"><h3>Identity is the hard part</h3><p>The curated prompt and system layer carries an athlete's likeness, a kit, and a program's marks across models — so output one and output two hundred are the same person on the same team.</p></div>
+      <div class="card"><h3>That's the whole thesis</h3><p>Volume without drift. LOCKR picks the model so you can keep picking the idea.</p></div>
+    </div>
+  </section>
+
+  <section id="pipeline" class="band reveal" data-for="lockr">
+    <div class="section-head">
+      <p class="tag">How it works</p>
+      <h2>Reference in, season out</h2>
+    </div>
+    <div class="pipe">
+      <div class="pipe-step"><span class="n">01</span><h3>Load identity</h3><p>Athlete reference set, program brand system, or both.</p></div>
+      <div class="pipe-step"><span class="n">02</span><h3>Pick a studio</h3><p>Athlete, Creative, or Program — the workflow follows the job.</p></div>
+      <div class="pipe-step"><span class="n">03</span><h3>Curated prompt</h3><p>Systems tuned per model do the prompt engineering for you.</p></div>
+      <div class="pipe-step"><span class="n">04</span><h3>Route &amp; generate</h3><p>The job goes to whichever of the 40+ models fits it best.</p></div>
+      <div class="pipe-step"><span class="n">05</span><h3>Export the slate</h3><p>Every ratio, every athlete, still on identity.</p></div>
+    </div>
+  </section>
+
+  <!-- ================= IMPACT (shared) ================= -->
+  <section id="impact" class="band reveal" data-for="visitor client">
+    <div class="section-head">
+      <p class="tag">Impact</p>
+      <h2>The numbers so far</h2>
+    </div>
+    <div class="stats-grid">
+      <div><div class="stat-num grad-text" data-target="1350">0</div><div class="stat-label">Athletes Served</div></div>
+      <div><div class="stat-num grad-text" data-target="700">0</div><div class="stat-label">Schools &amp; Colleges</div></div>
+      <div><div class="stat-num grad-text" data-target="1250">0</div><div class="stat-label">Commitments Made</div></div>
+      <div><div class="stat-num grad-text" data-target="45">0</div><div class="stat-label">States Reached</div></div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT (shared) ================= -->
+  <section id="contact" class="band reveal" data-for="visitor client lockr">
+    <div class="contact-box">
+      <h2 data-for="visitor">Let's build something <span class="grad-text">worth sharing</span>.</h2>
+      <h2 data-for="client">Ready when you <span class="grad-text">are</span>.</h2>
+      <h2 data-for="lockr">Want <span class="grad-text">early access</span>?</h2>
+
+      <p data-for="visitor">Reach out about a project, a conversation, or anything you think I'd find interesting.</p>
+      <p data-for="client">Send a brief, or just say what you need and when. I answer fast.</p>
+      <p data-for="lockr">LOCKR is in active development. Tell me your program and where the volume hurts.</p>
+
+      <a href="mailto:info@wilcomediallc.com" class="btn btn-primary">info@wilcomediallc.com</a>
+      <div class="social-row">
+        <a href="https://instagram.com/madebywilco" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="https://tiktok.com/@madebywilco" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M16 4v9.5a4.5 4.5 0 1 1-4-4.47V4h4z"/><path d="M16 4c0 2.5 2 4.5 4.5 4.5"/></svg>
+        </a>
+        <a href="https://x.com/madebywilco" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg>
+        </a>
+      </div>
+      <div class="qr-card">
+        <div class="qr-frame"><canvas id="qr-canvas" width="168" height="168" aria-label="QR code linking to wilcomediallc.com"></canvas></div>
+        <p class="qr-label">Scan to visit <a href="https://wilcomediallc.com" target="_blank" rel="noopener" class="grad-text">wilcomediallc.com</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="game-wrap">
+    <div class="game-label">
+      <span>Bored? Play a round.</span>
+      <span id="dino-score">SCORE 0</span>
+    </div>
+    <canvas id="dino-canvas" width="640" height="160" tabindex="0" aria-label="Endless runner mini game. Press space or up arrow to jump."></canvas>
+    <p class="game-hint">Tap, click, or press Space / ↑ to jump · best <span id="dino-best">0</span></p>
+  </div>
+  <p class="footer-meta">
+    © <span id="year"></span> Wilco Media, LLC — <a href="mailto:info@wilcomediallc.com">info@wilcomediallc.com</a>
+  </p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var $  = function(s,r){ return (r||document).querySelector(s); };
+  var $$ = function(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+
+  function store(key, val){
+    try{ if(val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); }
+    catch(e){ return null; }
+  }
+
+  var toastEl = $('#toast'), toastTimer;
+  function toast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2600);
+  }
+
+  $('#year').textContent = new Date().getFullYear();
+
+  /* ---------- QR ---------- */
+  if(window.QRious){
+    try{
+      new QRious({ element:$('#qr-canvas'), value:'https://wilcomediallc.com', size:168,
+                   background:'#eef1fb', foreground:'#05060b', level:'H' });
+    }catch(e){}
+  }
+
+  /* ---------- audience slider ---------- */
+  var AUDS = ['visitor','client','lockr'];
+  var root = document.documentElement;
+  var mainEl = $('#main');
+  var thumb = $('#aud-thumb');
+  var audBtns = $$('[data-aud-btn]');
+
+  function setAudience(aud, opts){
+    if(AUDS.indexOf(aud) === -1) aud = 'visitor';
+    opts = opts || {};
+    var i = AUDS.indexOf(aud);
+
+    if(thumb) thumb.style.transform = 'translateX(' + (i * 100) + '%)';
+    audBtns.forEach(function(b){
+      var on = b.getAttribute('data-aud-btn') === aud;
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+      if(on && mainEl) mainEl.setAttribute('aria-labelledby', b.id);
+    });
+
+    if(root.getAttribute('data-aud') === aud){ return; }
+
+    if(opts.animate !== false && mainEl){
+      mainEl.classList.add('swapping');
+      setTimeout(function(){
+        root.setAttribute('data-aud', aud);
+        mainEl.classList.remove('swapping');
+        refreshReveals();
+      }, 180);
+    } else {
+      root.setAttribute('data-aud', aud);
+      refreshReveals();
+    }
+
+    store('wilco-aud', aud);
+    try{
+      var u = new URL(window.location.href);
+      u.searchParams.set('for', aud);
+      history.replaceState(null, '', u);
+    }catch(e){}
+  }
+
+  audBtns.forEach(function(b){
+    b.addEventListener('click', function(){ setAudience(b.getAttribute('data-aud-btn')); });
+    b.addEventListener('keydown', function(e){
+      var i = audBtns.indexOf(b), n = null;
+      if(e.key === 'ArrowRight') n = (i + 1) % audBtns.length;
+      else if(e.key === 'ArrowLeft') n = (i - 1 + audBtns.length) % audBtns.length;
+      else if(e.key === 'Home') n = 0;
+      else if(e.key === 'End') n = audBtns.length - 1;
+      if(n === null) return;
+      e.preventDefault();
+      audBtns[n].focus();
+      setAudience(audBtns[n].getAttribute('data-aud-btn'));
+    });
+  });
+
+  $$('[data-goto-aud]').forEach(function(b){
+    b.addEventListener('click', function(){
+      setAudience(b.getAttribute('data-goto-aud'));
+      setTimeout(function(){
+        var t = $('#lockr');
+        if(t) t.scrollIntoView({ behavior:'smooth', block:'start' });
+      }, 240);
+    });
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  var revealIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold:0.12 });
+  function refreshReveals(){
+    $$('.reveal').forEach(function(el){
+      if(el.offsetParent === null){ el.classList.remove('in'); return; }
+      var r = el.getBoundingClientRect();
+      if(r.top < window.innerHeight * 0.9) el.classList.add('in');
+      revealIO.observe(el);
+    });
+    resetStats();
+  }
+  $$('.reveal').forEach(function(el){ revealIO.observe(el); });
+
+  /* ---------- stat counters ---------- */
+  var statIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target;
+      if(el.dataset.done === '1') return;
+      el.dataset.done = '1';
+      var target = parseInt(el.dataset.target, 10) || 0;
+      var dur = 1400, start = performance.now();
+      (function tick(now){
+        var p = Math.min((now - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(eased * target).toLocaleString() + (p >= 1 ? '+' : '');
+        if(p < 1) requestAnimationFrame(tick);
+      })(start);
+    });
+  }, { threshold:0.4 });
+  function resetStats(){ $$('.stat-num').forEach(function(el){ statIO.observe(el); }); }
+  resetStats();
+
+  /* observers exist now — safe to apply the saved / linked audience */
+  var initial = 'visitor';
+  try{
+    var q = new URL(window.location.href).searchParams.get('for');
+    if(q && AUDS.indexOf(q) !== -1) initial = q;
+    else { var s = store('wilco-aud'); if(s && AUDS.indexOf(s) !== -1) initial = s; }
+  }catch(e){}
+  setAudience(initial, { animate:false });
+
+  /* ---------- work gallery filter ---------- */
+  var shots = $$('#shot-grid .shot');
+  var countEl = $('#shot-count');
+  shots.forEach(function(fig){
+    var img = fig.querySelector('img');
+    if(!img) return;
+    img.addEventListener('error', function(){ fig.classList.add('no-img'); });
+    if(img.complete && img.naturalWidth === 0) fig.classList.add('no-img');
+  });
+  function applyFilter(cat){
+    var shown = 0;
+    shots.forEach(function(fig){
+      var match = (cat === 'all') || fig.getAttribute('data-cat') === cat;
+      fig.classList.toggle('hidden', !match);
+      if(match) shown++;
+    });
+    if(countEl) countEl.textContent = 'Showing ' + shown + ' of ' + shots.length + ' projects.';
+  }
+  $$('[data-filter]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      $$('[data-filter]').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      applyFilter(btn.getAttribute('data-filter'));
+    });
+  });
+  if(shots.length) applyFilter('all');
+
+  /* ---------- brief builder ---------- */
+  var briefBody = $('#brief-body'), briefSend = $('#brief-send'), briefCopy = $('#brief-copy');
+  function briefPick(group){
+    var on = $('[data-brief="' + group + '"][aria-pressed="true"]');
+    return on ? on.getAttribute('data-value') : '';
+  }
+  function briefText(){
+    var name  = ($('#brief-name') && $('#brief-name').value.trim()) || '';
+    var notes = ($('#brief-notes') && $('#brief-notes').value.trim()) || '';
+    var when  = ($('#brief-when') && $('#brief-when').value) || '';
+    var lines = [];
+    lines.push('Hi Will — ' + (name ? 'this is ' + name + '. ' : '') + 'I need ' + briefPick('type') + ' for ' + briefPick('who') + '.');
+    lines.push('Timing: ' + when + '.');
+    if(notes) lines.push('Details: ' + notes);
+    lines.push('Sent from wilcomediallc.com');
+    return lines.join('\n\n');
+  }
+  function renderBrief(){
+    if(!briefBody) return;
+    var txt = briefText();
+    briefBody.textContent = txt;
+    if(briefSend){
+      briefSend.href = 'mailto:info@wilcomediallc.com?subject=' +
+        encodeURIComponent('Project brief — ' + briefPick('type')) +
+        '&body=' + encodeURIComponent(txt);
+    }
+  }
+  $$('[data-brief]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var g = btn.getAttribute('data-brief');
+      $$('[data-brief="' + g + '"]').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      renderBrief();
+    });
+  });
+  ['#brief-name','#brief-notes','#brief-when'].forEach(function(sel){
+    var el = $(sel); if(el) el.addEventListener('input', renderBrief);
+  });
+  if(briefCopy){
+    briefCopy.addEventListener('click', function(){
+      var txt = briefText();
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(txt).then(
+          function(){ toast('Brief copied.'); },
+          function(){ toast('Copy failed — select the text instead.'); }
+        );
+      } else { toast('Copy not supported here — select the text instead.'); }
+    });
+  }
+  renderBrief();
+
+  /* ---------- lockr studio tabs ---------- */
+  var tabs = $$('.studio-tab');
+  function selectTab(tab){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if(panel) panel.hidden = !on;
+    });
+    store('wilco-studio', tab.id);
+  }
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){ selectTab(tab); });
+    tab.addEventListener('keydown', function(e){
+      var i = tabs.indexOf(tab), n = null;
+      if(e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+      else if(e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+      else if(e.key === 'Home') n = 0;
+      else if(e.key === 'End') n = tabs.length - 1;
+      if(n === null) return;
+      e.preventDefault();
+      tabs[n].focus();
+      selectTab(tabs[n]);
+    });
+  });
+  var savedTab = store('wilco-studio');
+  if(savedTab){ var st = document.getElementById(savedTab); if(st) selectTab(st); }
+
+  /* ---------- runner game ---------- */
+  (function(){
+    var canvas = $('#dino-canvas');
+    if(!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var scoreEl = $('#dino-score'), bestEl = $('#dino-best');
+    var W = canvas.width, H = canvas.height, groundY = H - 28;
+    var player, obstacles, speed, score, running, gameOver, frame, raf;
+    var best = parseInt(store('wilco-best') || '0', 10) || 0;
+    if(bestEl) bestEl.textContent = best;
+
+    function reset(){
+      player = { x:50, y:groundY-30, w:26, h:30, vy:0, jumping:false };
+      obstacles = []; speed = 5.2; score = 0; frame = 0;
+      running = false; gameOver = false;
+      if(scoreEl) scoreEl.textContent = 'SCORE 0';
+      draw();
+    }
+    function spawn(){
+      var h = 22 + Math.random()*22;
+      obstacles.push({ x:W+20, y:groundY-h, w:16, h:h });
+    }
+    function jump(){
+      if(gameOver){ reset(); running = true; loop(); return; }
+      if(!running){ running = true; loop(); }
+      if(!player.jumping){ player.jumping = true; player.vy = -9.6; }
+    }
+    function update(){
+      frame++;
+      if(frame % Math.max(40, 70 - Math.floor(speed*3)) === 0) spawn();
+      player.vy += 0.5;
+      player.y += player.vy;
+      if(player.y > groundY - player.h){ player.y = groundY - player.h; player.vy = 0; player.jumping = false; }
+      obstacles.forEach(function(o){ o.x -= speed; });
+      while(obstacles.length && obstacles[0].x + obstacles[0].w < 0) obstacles.shift();
+      for(var i=0;i<obstacles.length;i++){
+        var o = obstacles[i];
+        if(player.x < o.x + o.w && player.x + player.w > o.x &&
+           player.y < o.y + o.h && player.y + player.h > o.y){
+          gameOver = true; running = false;
+          if(Math.floor(score) > best){ best = Math.floor(score); store('wilco-best', best); if(bestEl) bestEl.textContent = best; }
+        }
+      }
+      score += 0.12; speed += 0.0015;
+      if(scoreEl) scoreEl.textContent = 'SCORE ' + Math.floor(score);
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      var grad = ctx.createLinearGradient(0,0,W,0);
+      grad.addColorStop(0,'#22d3ee'); grad.addColorStop(0.5,'#8b5cf6'); grad.addColorStop(1,'#ec4899');
+      ctx.strokeStyle = 'rgba(255,255,255,0.15)'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(0, groundY+1); ctx.lineTo(W, groundY+1); ctx.stroke();
+      ctx.fillStyle = grad; ctx.shadowColor = '#8b5cf6'; ctx.shadowBlur = 12;
+      ctx.fillRect(player.x, player.y, player.w, player.h);
+      ctx.shadowBlur = 8; ctx.fillStyle = '#ec4899';
+      obstacles.forEach(function(o){
+        ctx.beginPath();
+        ctx.moveTo(o.x, o.y+o.h); ctx.lineTo(o.x + o.w/2, o.y); ctx.lineTo(o.x + o.w, o.y+o.h);
+        ctx.closePath(); ctx.fill();
+      });
+      ctx.shadowBlur = 0;
+      if(!running){
+        ctx.fillStyle = 'rgba(238,241,251,0.88)';
+        ctx.font = '600 14px Inter, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(gameOver ? 'Game over — click to retry' : 'Click or press Space to start', W/2, H/2);
+      }
+    }
+    function loop(){
+      if(!running) return;
+      update(); draw();
+      raf = requestAnimationFrame(loop);
+    }
+    canvas.addEventListener('click', function(){ canvas.focus(); jump(); });
+    canvas.addEventListener('touchstart', function(e){ e.preventDefault(); jump(); }, { passive:false });
+    document.addEventListener('keydown', function(e){
+      if(e.code !== 'Space' && e.code !== 'ArrowUp') return;
+      var t = e.target;
+      if(t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT')) return;
+      if(document.activeElement !== canvas){
+        var r = canvas.getBoundingClientRect();
+        if(r.top > window.innerHeight || r.bottom < 0) return;
+      }
+      e.preventDefault();
+      jump();
+    });
+    document.addEventListener('visibilitychange', function(){
+      if(document.hidden && running){ running = false; cancelAnimationFrame(raf); draw(); }
+    });
+    reset();
+  })();
+})();
+</script>
+
+</body>
+</html>
